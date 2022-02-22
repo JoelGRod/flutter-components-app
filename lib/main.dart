@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:components_app/router/app_routes.dart';
+import 'package:components_app/shared/themes/themes.dart';
 
 
 void main() => runApp(const MyApp());
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Material App',
         debugShowCheckedModeBanner: false,
+
+        /* -------------- ROUTES ---------------------- */
         // home: const ListView2Screen(),
 
         // Main app Routes (clean - refactorized)
@@ -35,6 +38,11 @@ class MyApp extends StatelessWidget {
         //     builder: (context) => const AlertScreen()
         //   );
         // }, // Extra Routes (Routes that do not exist)
+
+        /* -------------- END ROUTES ---------------------- */
+
+        /* -------------- GLOBAL THEME -------------------- */
+        theme: MainTheme.darkTheme,
 
     );
   }

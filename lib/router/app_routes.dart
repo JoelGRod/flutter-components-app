@@ -33,8 +33,8 @@ class AppRoutes {
       icon: Icons.add_alert_outlined
       ),
     MenuOption(
-      name: 'Card', 
-      routeName: 'card', 
+      name: 'Cards', 
+      routeName: 'cards', 
       screen: const CardScreen(),
       icon: Icons.card_giftcard
       ),
