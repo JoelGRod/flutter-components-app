@@ -17,6 +17,21 @@ class MainTheme {
           style: TextButton.styleFrom(
             primary: primaryColor
           )
+        ),
+        // Floating Action Buttons
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: primaryColor,
+          elevation: 5
+        ),
+        // Elevated Button
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: const StadiumBorder(),
+            primary: primaryColor,
+            elevation: 0
+          ),
+        // Dialog (TODO)
+
         )
       );
 
