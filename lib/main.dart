@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         /* -------------- END ROUTES ---------------------- */
 
         /* -------------- GLOBAL THEME -------------------- */
-        theme: MainTheme.darkTheme,
+        theme: MainTheme.lightTheme,
 
     );
   }
