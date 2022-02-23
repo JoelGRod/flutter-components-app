@@ -31,10 +31,10 @@ class CardScreen extends StatelessWidget {
           ),
           SizedBox(height: 10),
           CustomCardTypeTwo(
-            cardText: 'A Beautiful Landscape III', 
+            // cardText: 'A Beautiful Landscape III', 
             imgUrl: 'https://cdn1.epicgames.com/ue/product/Screenshot/1-1920x1080-a58e6c53fee218623cb26ba39786d1e5.jpg?resize=1&w=1920',
           ),
-          
+          SizedBox(height: 50),
         ],
       ),
     );

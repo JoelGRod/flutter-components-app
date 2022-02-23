@@ -5,12 +5,12 @@ import 'package:components_app/shared/themes/main_theme.dart';
 class CustomCardTypeTwo extends StatelessWidget {
 
   final String imgUrl;
-  final String cardText;
+  final String? cardText;
 
   const CustomCardTypeTwo({
     Key? key, 
     required this.imgUrl, 
-    required this.cardText
+    this.cardText
   }) : super(key: key);
 
   @override
@@ -33,11 +33,13 @@ class CustomCardTypeTwo extends StatelessWidget {
             fadeInDuration: const Duration(milliseconds: 1000),
           ),
 
-          Container(
-            alignment: AlignmentDirectional.center,
-            padding: const EdgeInsets.all(15),
-            child: Text(cardText)
-          )
+          if(cardText != null)
+            Container(
+              alignment: AlignmentDirectional.center,
+              padding: const EdgeInsets.all(15),
+              child: Text(cardText!)
+              // child: Text(cardText ?? 'No Title')
+            )
         ],
       ),
     );
