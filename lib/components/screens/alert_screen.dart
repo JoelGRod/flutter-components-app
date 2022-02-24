@@ -1,16 +1,60 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
-  void displayDialog(BuildContext context) {
+  void displayDialogIOS(BuildContext context) {
+    showCupertinoDialog(
+      barrierDismissible: false,
+      context: context, 
+      builder: (context) {
+        return CupertinoAlertDialog(
+          title: const Text(
+            'Title', 
+            textAlign: TextAlign.center
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              Text('This is the content', textAlign: TextAlign.center,),
+              SizedBox(height: 15),
+              FlutterLogo(size: 100,)
+            ]
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context), 
+              child: const Text(
+                "Cancel", 
+                style: TextStyle(
+                  color: Colors.red
+                ),
+              )
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context), 
+              child: const Text("Ok")
+            )
+          ],
+        );
+      }
+    );
+  }
+
+  void displayDialogAndroid(BuildContext context) {
     showDialog(
         barrierDismissible: false,
         context: context,
         builder: (context) {
           return AlertDialog(
             elevation: 5,
-            title: const Text('Title'),
+            title: const Text(
+              'Title', 
+              textAlign: TextAlign.center
+            ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15)
             ),
@@ -18,14 +62,23 @@ class AlertScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Text('This is the content', textAlign: TextAlign.center,),
-                SizedBox(height: 30),
-                FlutterLogo(size: 50,)
+                SizedBox(height: 15),
+                FlutterLogo(size: 100,)
               ]
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context), 
-                child: const Text("Cancel")
+                child: const Text(
+                  "Cancel", 
+                  style: TextStyle(
+                    color: Colors.red
+                  )
+                )
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context), 
+                child: const Text("Ok")
               )
             ],
           );
@@ -37,7 +90,9 @@ class AlertScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: ElevatedButton(
-            onPressed: () => displayDialog(context),
+            onPressed: () => Platform.isAndroid 
+                              ? displayDialogAndroid(context) 
+                              : displayDialogIOS(context),
             style: ElevatedButton.styleFrom(
               primary: Colors.deepOrange.shade600,
               shape: const StadiumBorder(),
