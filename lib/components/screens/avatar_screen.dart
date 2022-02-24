@@ -22,6 +22,8 @@ class AvatarScreen extends StatelessWidget {
          child: CircleAvatar(
            maxRadius: 120,
            backgroundImage: NetworkImage('https://depositosonoro.com/wp-content/uploads/2019/05/a2252348569_16-1.jpg'),
+          //  backgroundImage: 1 > 0 ? NetworkImage('https://depositosonoro.com/wp-content/uploads/2019/05/a2252348569_16-1.jpg') : null,
+          //  child: 1 < 0 ? Text('JG') : null
          ),
       ),
     );
