@@ -90,7 +90,7 @@ class AlertScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: ElevatedButton(
-            onPressed: () => !Platform.isAndroid 
+            onPressed: () => Platform.isAndroid 
                               ? displayDialogAndroid(context) 
                               : displayDialogIOS(context),
             style: ElevatedButton.styleFrom(
