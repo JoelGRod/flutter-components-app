@@ -38,6 +38,12 @@ class AppRoutes {
       screen: const CardScreen(),
       icon: Icons.card_giftcard
       ),
+    MenuOption(
+      name: 'Avatars', 
+      routeName: 'avatars', 
+      screen: const AvatarScreen(),
+      icon: Icons.person
+      ),
   ];
 
   // Routes Map Way I
