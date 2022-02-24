@@ -44,6 +44,12 @@ class AppRoutes {
       screen: const AvatarScreen(),
       icon: Icons.person
       ),
+    MenuOption(
+      name: 'Animated', 
+      routeName: 'animated', 
+      screen: const AnimatedScreen(),
+      icon: Icons.animation
+      ),
   ];
 
   // Routes Map Way I
