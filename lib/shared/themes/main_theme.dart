@@ -30,9 +30,14 @@ class MainTheme {
             primary: primaryColor,
             elevation: 0
           ),
-        // Dialog (TODO)
-
-        )
+        ),
+        // Dialog
+        dialogTheme: DialogTheme(
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+          )
+        ),
       );
 
   static final ThemeData darkTheme = ThemeData.dark()

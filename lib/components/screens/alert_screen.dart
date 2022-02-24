@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show showCupertinoDialog, CupertinoAlertDialog;
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
@@ -50,14 +50,14 @@ class AlertScreen extends StatelessWidget {
         context: context,
         builder: (context) {
           return AlertDialog(
-            elevation: 5,
+            // elevation: 5,
             title: const Text(
               'Title', 
               textAlign: TextAlign.center
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15)
-            ),
+            // shape: RoundedRectangleBorder(
+            //   borderRadius: BorderRadius.circular(15)
+            // ),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: const [
@@ -90,7 +90,7 @@ class AlertScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
           child: ElevatedButton(
-            onPressed: () => Platform.isAndroid 
+            onPressed: () => !Platform.isAndroid 
                               ? displayDialogAndroid(context) 
                               : displayDialogIOS(context),
             style: ElevatedButton.styleFrom(
