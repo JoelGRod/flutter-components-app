@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:components_app/components/widgets/widgets.dart';
+
+
 class InputsScreen extends StatelessWidget {
    
   const InputsScreen({Key? key}) : super(key: key);
@@ -16,40 +19,34 @@ class InputsScreen extends StatelessWidget {
             horizontal: 20, vertical: 10
           ),
           child: Column(
-            children: [
-              TextFormField(
-                autofocus: true,
-                initialValue: '',
-                textCapitalization: TextCapitalization.words,
-                onChanged: (value) => print(value),
-                validator: (value) {
-                  if(value == null) return 'Field is required';
-                  return value.length < 3 ? 'Minimun 3 chars' : null;
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: const InputDecoration(
-                  hintText: 'User Name',
-                  labelText: 'Name',
-                  helperText: 'Only Letters and whitespaces',
-                  // counterText: '3 char',
-                  // prefixIcon: Icon( Icons.person ),
-                  suffixIcon: Icon( Icons.person_add ),
-                  icon: Icon(Icons.person),
-                  // Input Border style
-                  // border: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.only(
-                  //     topRight: Radius.circular(10),
-                  //     bottomLeft: Radius.circular(10)
-                  //   )
-                  // ),
-                  // Change specific color to one of the input states
-                  // focusedBorder: OutlineInputBorder(
-                  //   borderSide: BorderSide(
-                  //    color: Colors.indigo 
-                  //   )
-                  // )
-                ),
-              )
+            children: const[
+              SizedBox(height: 25,),
+              CustomInputField( 
+                labelText: 'Name', 
+                hintText: 'Name',
+                focus: true,
+                icon: Icons.person,
+              ),
+              SizedBox(height: 20,),
+              CustomInputField( 
+                labelText: 'Lastname', 
+                hintText: 'Lastname', 
+                icon: Icons.person_outline
+              ),
+              SizedBox(height: 20,),
+              CustomInputField( 
+                labelText: 'Email', 
+                hintText: 'Email',
+                keyboardType: TextInputType.emailAddress,
+                icon: Icons.email_outlined,
+              ),
+              SizedBox(height: 20,),
+              CustomInputField( 
+                labelText: 'Password', 
+                hintText: 'Password',
+                obscureText: true,
+                icon: Icons.password,
+              ),
             ],
           ),
         ),
@@ -68,3 +65,4 @@ class InputsScreen extends StatelessWidget {
     );
   }
 }
+

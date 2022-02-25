@@ -41,6 +41,7 @@ class MainTheme {
         // TextFormFields
         inputDecorationTheme: const InputDecorationTheme(
           floatingLabelStyle: TextStyle( color: primaryColor ),
+          iconColor: primaryColor,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: primaryColor),
             borderRadius: BorderRadius.only(
