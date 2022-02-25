@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         // Main app Routes (clean - refactorized)
         initialRoute: AppRoutes.initialRoute,
-        routes: AppRoutes.getMenuOptions(),
+        routes: AppRoutes.getAppRoutes(),
         // Extra Routes (Routes that do not exist)
         onGenerateRoute: (settings) => AppRoutes.onGenerateRoute(settings), 
 
