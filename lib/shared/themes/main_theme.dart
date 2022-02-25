@@ -38,6 +38,30 @@ class MainTheme {
             borderRadius: BorderRadius.circular(15)
           )
         ),
+        // TextFormFields
+        inputDecorationTheme: const InputDecorationTheme(
+          floatingLabelStyle: TextStyle( color: primaryColor ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: primaryColor),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(10)
+            )
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: primaryColor),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(10)
+            )
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10),
+              bottomLeft: Radius.circular(10)
+            )
+          ),
+        )
       );
 
   static final ThemeData darkTheme = ThemeData.dark()
