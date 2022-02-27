@@ -35,20 +35,20 @@ class InputsScreen extends StatelessWidget {
                   labelText: 'Name',
                   hintText: 'Name',
                   focus: true,
-                  icon: Icons.person, 
-                  formField: 'name', 
+                  icon: Icons.person,
+                  formField: 'name',
                   formValues: formValues,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 CustomInputField(
-                    labelText: 'Lastname',
-                    hintText: 'Lastname',
-                    icon: Icons.person_outline,
-                    formField: 'lastname', 
-                    formValues: formValues,
-                    ),
+                  labelText: 'Lastname',
+                  hintText: 'Lastname',
+                  icon: Icons.person_outline,
+                  formField: 'lastname',
+                  formValues: formValues,
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -57,7 +57,7 @@ class InputsScreen extends StatelessWidget {
                   hintText: 'Email',
                   keyboardType: TextInputType.emailAddress,
                   icon: Icons.email_outlined,
-                  formField: 'email', 
+                  formField: 'email',
                   formValues: formValues,
                 ),
                 const SizedBox(
@@ -68,16 +68,28 @@ class InputsScreen extends StatelessWidget {
                   hintText: 'Password',
                   obscureText: true,
                   icon: Icons.password,
-                  formField: 'password', 
+                  formField: 'password',
                   formValues: formValues,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
+                DropdownButtonFormField<String>(
+                    items: const [
+                      DropdownMenuItem(value: 'Admin', child: Text('Admin')),
+                      DropdownMenuItem(value: 'User', child: Text('User')),
+                    ],
+                    onChanged: (value) {
+                      formValues['role'] = value ?? 'Admin';
+                    }),
+                const SizedBox(
+                  height: 30,
+                ),
                 ElevatedButton(
                     onPressed: () {
-                      // Hide keyboard after click
-                      FocusScope.of(context).requestFocus(FocusNode());
+                      // Hide keyboard after click (problems with dropdownbuttonformfield)
+                      // FocusScope.of(context).requestFocus(FocusNode());
+
                       // Form State actions (form Key)
                       if (!formKey.currentState!.validate()) {
                         print('Invalid form');
