@@ -50,6 +50,12 @@ class AppRoutes {
       screen: const InputsScreen(),
       icon: Icons.input
       ),
+    MenuOption(
+      name: 'Sliders && Checks', 
+      routeName: 'sliders', 
+      screen: const SliderScreen(),
+      icon: Icons.slideshow
+      ),
   ];
 
   // Routes Map Way I
