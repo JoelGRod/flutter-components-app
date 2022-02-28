@@ -11,6 +11,7 @@ class SliderScreen extends StatefulWidget {
 
 class _SliderScreenState extends State<SliderScreen> {
   double _sliderValue = 100;
+  bool _isSliderEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,33 +19,59 @@ class _SliderScreenState extends State<SliderScreen> {
       appBar: AppBar(
         title: const Text('Slider Screen'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Slider.adaptive(
-                min: 0,
-                max: 400,
-                value: _sliderValue,
-                activeColor: MainTheme.primaryColor,
-                divisions: 10,
-                onChanged: (value) {
-                  setState(() {
-                    _sliderValue = value;
-                  });
-                }),
-            Image(
-              image: const NetworkImage(
-                'http://i.imgur.com/GAOosRW.png'
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+          ),
+          Slider.adaptive(
+              min: 0,
+              max: 400,
+              value: _sliderValue,
+              activeColor: MainTheme.primaryColor,
+              divisions: 10,
+              onChanged: _isSliderEnabled 
+                ? (value) => setState(() => _sliderValue = value )
+                : null
               ),
-              fit: BoxFit.contain,
-              width: _sliderValue,  
+
+          Checkbox(
+              value: _isSliderEnabled,
+              activeColor: MainTheme.primaryColor,
+              onChanged: (value) => setState(() => _isSliderEnabled = value ?? true)
+          ),
+          Switch.adaptive(
+              value: _isSliderEnabled,
+              activeColor: MainTheme.primaryColor,
+              onChanged: ( value ) => setState(() => _isSliderEnabled = value)
+          ),
+          CheckboxListTile(
+              title: const Text('Enable Slider Checkbox'),
+              activeColor: MainTheme.primaryColor,
+              value: _isSliderEnabled, 
+              onChanged: ( value ) => setState(() => _isSliderEnabled = value ?? true)
+          ),
+          SwitchListTile.adaptive(
+              title: const Text('Enable Slider Switch'),
+              activeColor: MainTheme.primaryColor,
+              value: _isSliderEnabled, 
+              onChanged: ( value ) => setState(() => _isSliderEnabled = value)
+          ),
+          const AboutListTile(),
+
+          Expanded(
+            child: SingleChildScrollView(
+              child: Image(
+                image: const NetworkImage(
+                    'http://i.imgur.com/GAOosRW.png'
+                    // 'https://i.pinimg.com/474x/01/ef/3f/01ef3fc689814a67bfbd33e66029d8c1--sandman-vertigo-western-comics.jpg'
+                ),
+                fit: BoxFit.contain,
+                width: _sliderValue,
+              ),
             ),
-            const SizedBox(height: 100,)
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

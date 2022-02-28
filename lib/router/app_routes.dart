@@ -51,7 +51,7 @@ class AppRoutes {
       icon: Icons.input
       ),
     MenuOption(
-      name: 'Sliders && Checks', 
+      name: 'Sliders & Checks', 
       routeName: 'sliders', 
       screen: const SliderScreen(),
       icon: Icons.slideshow
