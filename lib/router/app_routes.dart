@@ -56,6 +56,12 @@ class AppRoutes {
       screen: const SliderScreen(),
       icon: Icons.slideshow
       ),
+    MenuOption(
+      name: 'Infinite Scroll & Pull to Refresh', 
+      routeName: 'listviewbuilder', 
+      screen: const ListViewBuilderScreen(),
+      icon: Icons.build_circle_outlined
+      ),
   ];
 
   // Routes Map Way I

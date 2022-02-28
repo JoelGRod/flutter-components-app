@@ -6,5 +6,5 @@ export 'package:components_app/components/screens/home_screen.dart';
 export 'package:components_app/components/screens/inputs_screen.dart';
 export 'package:components_app/components/screens/list_view_1_screen.dart';
 export 'package:components_app/components/screens/list_view_2_screen.dart';
+export 'package:components_app/components/screens/listview_builder_screen.dart';
 export 'package:components_app/components/screens/slider_screen.dart';
-
