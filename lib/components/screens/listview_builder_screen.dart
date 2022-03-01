@@ -54,6 +54,7 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
   }
 
   Future<void> refreshScreen() async {
+    // HTTP Request here
     await Future.delayed( const Duration(seconds: 2) );
     final int lastId = imgsIds.last + 1;
     imgsIds.clear();
